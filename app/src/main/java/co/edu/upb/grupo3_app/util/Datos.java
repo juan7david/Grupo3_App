@@ -10,6 +10,7 @@ public class Datos extends Application {
         this.setDato(dato);
     }
 
+
     public String[] getDato() {
         return dato;
     }

@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         ValidacionFormulario llamada= new ValidacionFormulario();
         llamada.formGeneral(departamento,municipio,estrato,edad);
 
-        datos=((Datos)getApplication());
-        datos.setDato(departamento,municipio,estrato,edad);
+        //datos=((Datos)getApplication());
+        //datos.setDato(departamento,municipio,estrato,edad);
 
         //validacion_formulario.formGraduados(departamento,municipio); // esto me trae un true o false
 
@@ -60,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if (validacion_formulario.formGeneral(departamento,municipio,estrato,edad) == true){
                          Toast.makeText(MainActivity.this, "El resultado es True", Toast.LENGTH_SHORT).show();
-                }else   {
+
+                }
+
+                    else   {
                         Toast.makeText(MainActivity.this, "El resultado es False", Toast.LENGTH_SHORT).show();
                     }
                 }
