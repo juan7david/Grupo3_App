@@ -15,6 +15,8 @@ import co.edu.upb.grupo3_app.util.DataProcess;
 public class FiltraInfo extends AppCompatActivity {
 
     private DataProcess procesador_datos;
+    private DataProcess procesador_datos1;
+
     private  String[] usuarios  ;
     private LinearLayout ll;
 
@@ -23,11 +25,46 @@ public class FiltraInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filtra_info);
 
+
+        String [][] datos= new String[3][7];
+        datos[0][0]= "Antioquia";
+        datos[0][1]= "Medellin";
+        datos[0][2]= "Aspirante";
+        datos[0][3]= "15";
+        datos[0][4]= "3";
+        datos[0][5]= "M";
+        datos[0][6]= "1";
+
+
+        datos[1][0]= "Antioquia";
+        datos[1][1]= "Medellin";
+        datos[1][2]= "Aspirante";
+        datos[1][3]= "15";
+        datos[1][4]= "3";
+        datos[1][5]= "M";
+        datos[1][6]= "2";
+
+
+
+        datos[2][0]= "Valle";
+        datos[2][1]= "Cali";
+        datos[2][2]= "Aspirante";
+        datos[2][3]= "22";
+        datos[2][4]= "4";
+        datos[2][5]= "f";
+        datos[2][6]= "1";
+
+        procesador_datos1= new DataProcess();
+        String[][] resp1=procesador_datos1.filtrar(datos,"","","");
+     /*   System.out.println(Arrays.toString(resp1));
+        for ( String [][] fila:resp1){//aqui hay que recorrer la matriz nuevamente.
+
+            ll.addView(crearFila(fila));
+        }
+*/
+
         ll= findViewById(R.id.datos);
-
-
-
-        usuarios= new String[5];
+       usuarios= new String[5];
         usuarios[0]= "1,Ana,Antioquia,Medellin, 2, 28,4, F,ruta 2";
         usuarios[1]= "2,Juan,Antioquia,Medellin, 1, 18,4, M,ruta 1";
         usuarios[2]= "3,Maria,Bogota,Medellin, 2, 28,3, F,ruta 2";
